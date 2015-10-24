@@ -116,11 +116,10 @@
 		32CE9A7C1BDB2BF000670766 /* SayGift_3DAdvertisement */ = {
 			isa = PBXGroup;
 			children = (
+				32CE9ACB1BDB434000670766 /* SayGift_3DBanner_View */,
 				32CE9AB91BDB2FC200670766 /* IMG */,
 				32CE9A801BDB2BF100670766 /* AppDelegate.h */,
 				32CE9A811BDB2BF100670766 /* AppDelegate.m */,
-				32CE9AC81BDB33E100670766 /* SayGift_3DBanner_View.h */,
-				32CE9AC91BDB33E100670766 /* SayGift_3DBanner_View.m */,
 				32CE9A831BDB2BF100670766 /* ViewController.h */,
 				32CE9A841BDB2BF100670766 /* ViewController.m */,
 				32CE9A861BDB2BF100670766 /* Main.storyboard */,
@@ -169,6 +168,15 @@
 				32CE9AC31BDB2FD800670766 /* 2.jpg */,
 			);
 			name = IMG;
+			sourceTree = "<group>";
+		};
+		32CE9ACB1BDB434000670766 /* SayGift_3DBanner_View */ = {
+			isa = PBXGroup;
+			children = (
+				32CE9AC81BDB33E100670766 /* SayGift_3DBanner_View.h */,
+				32CE9AC91BDB33E100670766 /* SayGift_3DBanner_View.m */,
+			);
+			name = SayGift_3DBanner_View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

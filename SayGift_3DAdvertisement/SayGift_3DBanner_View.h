@@ -14,7 +14,7 @@
 
 @interface SayGift_3DBanner_View : UIView
 
-@property (nonatomic, assign)int currentIndex;
+@property (nonatomic, assign)int currentIndex;//当前图片的下标
 
 @property (nonatomic, strong)UIImageView *imageView;//图片
 
