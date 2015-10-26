@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define IMAGE_COUNT 6
+
 #define MainScreenH [UIScreen mainScreen].bounds.size.height
 #define MainScreenW [UIScreen mainScreen].bounds.size.width
 
@@ -17,6 +17,9 @@
 @property (nonatomic, assign)int currentIndex;//当前图片的下标
 
 @property (nonatomic, strong)UIImageView *imageView;//图片
+
+@property (nonatomic, strong)NSArray *imageArr;//图片数组
+
 
 - (void)show3DBannerView;
 

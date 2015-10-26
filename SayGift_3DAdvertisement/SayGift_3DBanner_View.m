@@ -16,18 +16,23 @@
     self = [super init];
     if (self) {
 //        self.frame = CGRectMake(0, 0, MainScreenW, 180);
-        
+//        _imageArr = [NSArray array];
     }
     return self;
 }
 
 - (void)show3DBannerView{
+    
+    _imageArr = @[@"0.jpg",@"1.jpg",@"2.jpg",@"3.jpg",@"4.jpg",@"5.jpg"];
     //定义图片控件
     _imageView=[[UIImageView alloc]init];
     _imageView.frame= CGRectMake(0, 0, MainScreenW, 180);
     _imageView.contentMode=UIViewContentModeScaleAspectFit;
-    _imageView.image=[UIImage imageNamed:@"0.jpg"];//默认图片
+    _imageView.image=[UIImage imageNamed:_imageArr[0]];//默认图片
     [self addSubview:_imageView];
+    
+    
+    
     //添加手势
     UISwipeGestureRecognizer *leftSwipeGesture=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(leftSwipe:)];
     leftSwipeGesture.direction=UISwipeGestureRecognizerDirectionLeft;
@@ -73,11 +78,11 @@
 #pragma mark 取得当前图片
 -(UIImage *)getImage:(BOOL)isNext{
     if (isNext) {
-        _currentIndex=(_currentIndex+1)%IMAGE_COUNT;
+        _currentIndex=(_currentIndex+1)%_imageArr.count;
     }else{
-        _currentIndex=(_currentIndex-1+IMAGE_COUNT)%IMAGE_COUNT;
+        _currentIndex=(_currentIndex-1+_imageArr.count)%(int)_imageArr.count;
     }
-    NSString *imageName=[NSString stringWithFormat:@"%i.jpg",_currentIndex];
+    NSString *imageName = _imageArr[_currentIndex];
     return [UIImage imageNamed:imageName];
 }
 
