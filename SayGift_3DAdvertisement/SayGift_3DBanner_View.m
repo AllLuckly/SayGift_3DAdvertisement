@@ -28,10 +28,14 @@
     _imageView=[[UIImageView alloc]init];
     _imageView.frame= CGRectMake(0, 0, MainScreenW, 180);
     _imageView.contentMode=UIViewContentModeScaleAspectFit;
+    
     _imageView.image=[UIImage imageNamed:_imageArr[0]];//默认图片
+    _imageView.userInteractionEnabled = YES;
+    self.userInteractionEnabled = YES;
     [self addSubview:_imageView];
-    
-    
+    _imageView.tag = 10;
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doDoubleTap:)];//默认点击第一张
+    [_imageView addGestureRecognizer:doubleTap];
     
     //添加手势
     UISwipeGestureRecognizer *leftSwipeGesture=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(leftSwipe:)];
@@ -83,9 +87,22 @@
         _currentIndex=(_currentIndex-1+_imageArr.count)%(int)_imageArr.count;
     }
     NSString *imageName = _imageArr[_currentIndex];
+    
+    
+    _imageView.tag = _currentIndex+10;
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doDoubleTap:)];
+    
+    [_imageView addGestureRecognizer:doubleTap];
+    
+    
     return [UIImage imageNamed:imageName];
 }
 
+- (void)doDoubleTap:(UITapGestureRecognizer*)gesture
+{
+    
+    [_delegate ClickImg:(int)gesture.view.tag];
+}
 
 
 @end
