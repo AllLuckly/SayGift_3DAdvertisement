@@ -101,7 +101,7 @@
 - (void)doDoubleTap:(UITapGestureRecognizer*)gesture
 {
     
-    [_delegate ClickImg:(int)gesture.view.tag];
+    [_delegate ClickImg:(int)(gesture.view.tag-10)];
 }
 
 
