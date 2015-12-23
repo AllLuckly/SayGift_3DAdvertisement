@@ -1,6 +1,7 @@
 # SayGift_3DAdvertisement
 
 ##技术交流群：511040024
+[作者博客](http://allluckly.cn/)
 
 导入头文件`#import "SayGift_3DBanner_View.h"`
 
